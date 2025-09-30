@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Daniel - Tema Escuro</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #121212;
+  color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+nav a {
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #FF6F61;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 80px 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #FF6F61;
+}
+
+/* ===== SOBRE MIM ===== */
+#sobre p {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* ===== HABILIDADES ===== */
+#habilidades ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#habilidades li {
+  background-color: #FF6F61;
+  color: #121212;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: transform 0.3s;
+}
+
+#habilidades li:hover {
+  transform: scale(1.1);
+}
+
+/* ===== PROJETOS ===== */
+#projetos .projeto-card {
+  background-color: #1f1f1f;
+  padding: 20px;
+  margin: 40px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(255,111,97,0.2);
+  transform: translateX(100%); /* inicial fora da tela */
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+#projetos .projeto-card.left {
+  transform: translateX(-100%);
+}
+
+#projetos .projeto-card.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#projetos h3 {
+  color: #FF6F61;
+  margin-bottom: 10px;
+}
+
+#projetos p {
+  color: #ccc;
+}
+
+#projetos a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #FF6F61;
+  font-weight: 500;
+}
+
+#projetos a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  text-align: center;
+  padding: 40px;
+  background-color: #1f1f1f;
+  color: #ccc;
+}
+
+footer a {
+  color: #FF6F61;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVO ===== */
+@media(max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  #habilidades ul {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>Daniel</h1>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <h2>Sobre Mim</h2>
+  <p>
+    Futuro bacharel em Ciências da Computação, apaixonado por desenvolvimento de software de baixo nível e otimização de sistemas embarcados. Experiência com C/C++, Python e ferramentas modernas de versionamento.
+  </p>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades">
+  <h2>Habilidades</h2>
+  <ul>
+    <li>C/C++</li>
+    <li>Python</li>
+    <li>JavaScript</li>
+    <li>HTML/CSS</li>
+    <li>Git</li>
+    <li>PyCharm</li>
+  </ul>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+  <h2>Projetos</h2>
+  <div class="projeto-card" data-side="right">
+    <h3>Projeto 1</h3>
+    <p>Descrição do projeto com tecnologias usadas e objetivo alcançado.</p>
+    <a href="https://github.com/danieluser/projeto1" target="_blank">Ver no GitHub</a>
+  </div>
+
+  <div class="projeto-card left" data-side="left">
+    <h3>Projeto 2</h3>
+    <p>Descrição do projeto com tecnologias usadas e objetivo alcançado.</p>
+    <a href="https://github.com/danieluser/projeto2" target="_blank">Ver no GitHub</a>
+  </div>
+</section>
+
+<!-- CONTATO / RODAPÉ -->
+<footer id="contato">
+  <p>Entre em contato:</p>
+  <a href="mailto:email@exemplo.com">email@exemplo.com</a> |
+  <a href="https://github.com/danieluser" target="_blank">GitHub</a> |
+  <a href="https://linkedin.com/in/danieluser" target="_blank">LinkedIn</a>
+</footer>
+
+<script>
+// ===== ANIMAÇÃO AO SCROLL =====
+const projetos = document.querySelectorAll('.projeto-card');
+
+function animaProjetos() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  projetos.forEach(projeto => {
+    const projetoTop = projeto.getBoundingClientRect().top;
+
+    if(projetoTop < triggerBottom) {
+      projeto.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', animaProjetos);
+window.addEventListener('load', animaProjetos);
+</script>
+
+</body>
+</html>
